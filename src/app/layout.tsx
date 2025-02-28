@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ConvexClientProvider from "@/components/ConvexClientProvider";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ConvexClientProvider>{children}</ConvexClientProvider>
+        <ConvexClientProvider>
+          <header className="sticky top-0 z-10 bg-background p-4 border-b-2 border-slate-200 dark:border-slate-800 flex flex-row justify-between items-center">
+            <div className="flex items-center justify-center gap-1">
+              <Image
+                src="/kiwi.svg"
+                alt="Events in Aotearoa Logo"
+                width={50}
+                height={50}
+              />
+              <h1 className="text-xl font-semibold text-center">
+                Events in Aotearoa
+              </h1>
+            </div>
+          </header>
+          {children}
+        </ConvexClientProvider>
       </body>
     </html>
   );

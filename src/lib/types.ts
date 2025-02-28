@@ -9,7 +9,7 @@ export type Event = {
   title: string;
   organiser: string;
   dateRaw: string;
-  dateParsed: string | null;
+  dateParsed: Date | null;
   modality: EventModality;
   region: string;
   venue: string;
@@ -18,4 +18,12 @@ export type Event = {
   year: number | null;
   isPublic: boolean;
   blurb: string;
+};
+
+export type DateInfo = {
+  time: string | null;
+  dayName: string;
+  day: string;
+  monthName: string;
+  startDate: string;
 };

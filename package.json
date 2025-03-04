@@ -12,7 +12,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.1.2",
     "@tabler/icons-react": "^3.30.0",
     "calendar-link": "^2.8.0",
     "class-variance-authority": "^0.7.1",

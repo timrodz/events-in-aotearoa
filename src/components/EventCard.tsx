@@ -51,8 +51,8 @@ export const EventCard = (props: Props) => {
   const dateInfo = props.dateParsed ? getDateInfo(props.dateParsed) : undefined;
 
   return (
-    <div className="bg-zinc-800 rounded-xl p-2">
-      <div className="rounded-lg border-[1px] p-4 border-zinc-500 bg-zinc-700 border-b-4 border-b-[#7fcc03]">
+    <div className="bg-zinc-900/50 rounded-xl p-1 shadow-md">
+      <div className="rounded-lg border-2 bg-zinc-800 p-4 border-zinc-500 border-b-4 border-b-[#7fcc03]">
         <div className="flex gap-4">
           <div>
             {props.dateParsed ? (
@@ -66,10 +66,11 @@ export const EventCard = (props: Props) => {
               <h3 className="font-bold text-white mb-2">{props.title}</h3>
               <p className="line-clamp-3 text-white">{description}</p>
             </div>
-            <div className="flex justify-between">
-              <p className="text-white flex items-center gap-1">
-                <MapPinIcon className="inline" color="white" /> {props.venue}
-              </p>
+            <div className="flex flex-col md:flex-row justify-between">
+              <div className="inline-block">
+                <MapPinIcon className="inline" color="white" />
+                <p className="ml-1 text-white inline">{props.venue}</p>
+              </div>
               <div className="flex gap-2 justify-center">
                 <AddToCalendarButton
                   title={props.title}

@@ -73,10 +73,10 @@ export const AddToCalendarButton = ({
   }, []);
 
   return (
-    <div className="flex items-center justify-center z-0">
+    <div className="flex group/btn items-center justify-center z-0">
       <span ref={buttonRef} className="inline-block relative">
         <button onClick={() => setIsOpen(!isOpen)}>
-          <CalendarPlusIcon />
+          <CalendarPlusIcon className="lucide size-5 transition-colors group-hover/btn:text-lime-600" />
         </button>
         <ul
           className={`${isOpen ? "opacity-100" : "opacity-0 invisible"} absolute top-full -left-20 min-w-full py-2 px-1 transition-opacity z-100 rounded-md border border-stone-700/70 bg-stone-800 p-1 text-sm text-stone-200 shadow-md`}

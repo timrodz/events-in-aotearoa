@@ -1,7 +1,7 @@
 import { dateToString, getDateInfo } from "@/lib/dates";
 import { type Event as EventType } from "@/lib/types";
 import { IconInfoCircle, IconTicket } from "@tabler/icons-react";
-import { MapPinIcon } from "lucide-react";
+import { MapPinIcon, Tickets, ChevronRight } from "lucide-react";
 import { AddToCalendarButton } from "./AddToCalendarButton";
 
 type Props = EventType;
@@ -51,17 +51,9 @@ export const EventCard = (props: Props) => {
   const dateInfo = props.dateParsed ? getDateInfo(props.dateParsed) : undefined;
 
   return (
-    <div className="group relative rounded-2xl border border-white/5 bg-[#f2f2f20c] p-1.5 shadow-2xl lg:rounded-3xl lg:p-2">
-      <div
-        className="absolute inset-x-0 top-0 h-px"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)",
-        }}
-      ></div>
-      <div className="relative flex gap-8  rounded-xl bg-stone-900 p-6 text-stone-100 ring-1 shadow-md ring-stone-800 transition duration-300 group-hover:bg-stone-800 group-hover:shadow">
-        <span className="absolute bottom-0 left-0 z-10 rounded-b-2xl h-1 w-0 bg-lime-500 duration-400 group-hover:w-full group-hover:transition-all"></span>
-
+    <div className="group relative lg:p-2">
+      <div className="relative flex gap-8 rounded-xl bg-stone-900 p-8 text-stone-100 transition duration-300 overflow-clip group-hover:shadow-2xl isolate">
+        <div className="absolute inset-0 bg-gradient-to-br from-stone-800 via-transparent via-30% -z-10"></div>
         {/* Date Section */}
         <div className="flex flex-col gap-1">
           {props.dateParsed ? (
@@ -82,7 +74,7 @@ export const EventCard = (props: Props) => {
             {/* Location */}
             <a
               href="#"
-              className="group relative isolate flex items-center gap-x-2 py-0.5 text-[0.8125rem]/6 font-medium transition-colors hover:text-lime-300"
+              className="group relative isolate flex items-center gap-x-2 py-0.5 text-[0.8125rem]/6 font-medium transition-colors underline text-stone-400"
             >
               <MapPinIcon
                 className="size-4 flex-none opacity-50"
@@ -92,65 +84,33 @@ export const EventCard = (props: Props) => {
             </a>
 
             {/* Action Buttons */}
-            <div className="flex items-center z-10 gap-4">
-              <AddToCalendarButton
-                title={props.title}
-                location={props.venue}
-                description={props.blurb}
-                dateInfo={dateInfo}
-                className="group/btn"
-                icon={
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-calendar-plus size-5 transition-colors group-hover/btn:text-lime-500"
-                  >
-                    <path d="M8 2v4" />
-                    <path d="M16 2v4" />
-                    <path d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8" />
-                    <path d="M3 10h18" />
-                    <path d="M16 19h6" />
-                    <path d="M19 16v6" />
-                  </svg>
-                }
-              />
+            <div className="flex items-center justify-between z-10">
+              <div className="flex items-center text-lime-500 gap-4">
+                <AddToCalendarButton
+                  title={props.title}
+                  location={props.venue}
+                  description={props.blurb}
+                  dateInfo={dateInfo}
+                  className="group/btn"
+                />
 
-              <a
-                href={props.ticketsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-ticket-check size-5 transition-colors group-hover/btn:text-lime-500"
+                <a
+                  href={props.ticketsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/btn"
                 >
-                  <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-              </a>
+                  <Tickets className="lucide -mt-1 lucide-ticket-check size-5 transition-colors group-hover/btn:text-lime-600" />
+                </a>
+              </div>
 
               <a
                 href={`/events/${props.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn"
+                className="flex text-sm items-center gap-2  text-lime-500 rounded-lg transition  hover:underline"
               >
-                <IconInfoCircle
-                  color="white"
-                  className="size-5 transition-colors group-hover/btn:text-lime-500"
-                />
+                More Info <ChevronRight className="size-5" />
               </a>
             </div>
           </div>

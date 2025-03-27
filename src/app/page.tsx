@@ -57,10 +57,10 @@ export default function HomePage() {
           <div className="mx-auto max-w-lg lg:mx-0 lg:flex lg:w-96 lg:max-w-none lg:flex-col lg:before:flex-1 lg:before:pt-6">
             <div className="pt-20 pb-16 sm:pt-32 sm:pb-20 lg:py-20">
               <div className="relative">
-                <div className="mb-4 size-8">
+                <div className="mb-8 size-8">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="size-8 rounded-full border border-lime-900 bg-radial from-lime-200 to-lime-700 fill-lime-900 stroke-transparent ring ring-lime-300"
+                    className="size-8 rounded-full fill-lime-300 stroke-lime-800 ring ring-lime-600"
                     fill="currentColor"
                     stroke="currentColor"
                     viewBox="0 0 51 51"
@@ -73,11 +73,12 @@ export default function HomePage() {
                     />
                   </svg>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <h1 className="text-3xl leading-tight font-bold tracking-tighter text-stone-300 md:text-4xl lg:leading-[1.1]">
-                    Tech events in <span className="text-white">Aotearoa</span>
+                <div className="flex flex-col gap-6">
+                  <h1 className="text-3xl leading-tight uppercase font-bold tracking-tighter text-lime-50 md:text-5xl lg:leading-[1.0]">
+                    Tech events in{" "}
+                    <span className="text-lime-300">Aotearoa</span>
                   </h1>
-                  <p className="max-w-2xl text-lg pb-12 font-light text-stone-300">
+                  <p className="max-w-2xl text-lg pb-3 font-light text-lime-50">
                     This list was created to share info on tech, innovation, and
                     startup events in Aotearo New Zealand.
                   </p>
@@ -92,6 +93,7 @@ export default function HomePage() {
                   <a
                     className="text-lime-500 font-medium"
                     href="https://www.arielcerda.com/about-en"
+                    target="blank"
                   >
                     Ariel Cerda
                   </a>
@@ -99,6 +101,7 @@ export default function HomePage() {
                   <a
                     className="text-lime-500 font-medium"
                     href="https://www.timrodz.dev"
+                    target="blank"
                   >
                     Juan Morais
                   </a>{" "}
@@ -107,6 +110,7 @@ export default function HomePage() {
                   <a
                     className="text-lime-500 font-medium"
                     href="https://docs.google.com/spreadsheets/d/1MpH9z4vZnHhYdvmMIYQyht69H4krUye9mEWSXmn81as/edit?gid=556103681#gid=556103681"
+                    target="blank"
                   >
                     Techstars Startup Digest
                   </a>
@@ -121,7 +125,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="relative h-full flex-auto bg-stone-900">
-        <main className="space-y-20 py-20 sm:space-y-32 sm:py-12">
+        <main className="space-y-20 py-20 min-h-dvh h-full sm:space-y-32 sm:py-12">
           <article className="scroll-mt-16">
             <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
               <div className="lg:ml-96 lg:flex lg:w-full lg:justify-end lg:pl-32">
